@@ -1,0 +1,36 @@
+<title>Login system</title>
+
+<div class="nav navbar-default navbar-fixed-top nav-color nav-implement">
+    <h1>Simple php form</h1>
+</div>
+<br><br><br>
+<br><br><br>
+<br><br>
+<div class="container">
+    <div class="row">
+        <div class="well text-center">
+            <?php
+                if ($_REQUEST["logged"] == "not") {
+                   echo '<h3 class="text-info">Error in login, check your email and password.</h3>';
+                }
+            ?>
+            <h2 class="text-info">Please make your login</h2>
+            <br>
+            <form class="form-group-lg" method="post" action="/simplessys/views/account/validateLogin.php">
+                <label class="form-group text-left">
+                    <p>Email:</p>
+                    <input class="form-control" type="email" required="required" placeholder="Email" name="email">
+                </label><br>
+                <label class="form-group text-left">
+                    <p>Password:</p>
+                    <input class="form-control" type="password" required="required" placeholder="Password" name="password">
+                </label><br>
+                <button type="submit" class="btn btn-lg btn-default btn-info btn-width">Login</button>
+            </form>
+            <br>
+            <p class="text-left">
+                <a href="/simplessys/?page=register" class="btn-link">Click here for register</a>
+            </p>
+        </div>
+    </div>
+</div>

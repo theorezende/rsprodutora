@@ -1,0 +1,41 @@
+<title>Register system</title>
+<script src="static/js/validate.js"></script>
+<br><br><br>
+<br><br><br>
+<br><br>
+<div class="container">
+    <div class="row">
+        <div class="well text-center">
+            <?php
+                if($_REQUEST['logged'] == 'exist') { ?>
+                <h2 class="text-info">User already exists!</h2>
+            <?php } else { ?>
+                <h2 class="text-info">Please make your register</h2>
+            <?php } ?>
+            <br>
+            <form id="form" class="form-group-lg" method="post" action="views/account/register.php">
+                <label class="form-group text-left">
+                    <p>Name:</p>
+                    <input class="form-control" type="text" required="required" placeholder="Name" name="name">
+                </label><br>
+                <label class="form-group text-left">
+                    <p>Email:</p>
+                    <input class="form-control" type="email" required="required" placeholder="Email" name="email">
+                </label><br>
+                <label class="form-group text-left">
+                    <p>Password:</p>
+                    <input id="pass" class="form-control" type="password" required="required" placeholder="Password" name="password">
+                </label><br>
+                <label class="form-group text-left">
+                    <p>Again password:</p>
+                    <input id="again" class="form-control" type="password" required="required" placeholder="Password">
+                </label><br>
+                <button type="button" onclick="validate()" class="btn btn-lg btn-default btn-info btn-width">Register</button>
+            </form>
+            <br>
+            <p class="text-left">
+                <a href="/simplessys/?page=login" class="btn-link">Click here for login</a>
+            </p>
+        </div>
+    </div>
+</div>

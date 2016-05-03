@@ -1,18 +1,45 @@
-<?php
-    $login = $_POST['usuario'];
-    $entrar = $_POST['login'];
-    $senha = md5($_POST['senha']);
-    $connect = mysql_connect('nome_do_servidor','nome_de_usuario','senha');
-    $db = mysql_select_db('nome_do_banco_de_dados');
-        if (isset($entrar)) {
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="UTF-8">
+    <title>RS Produtora 2016</title>
 
-            $verifica = mysql_query("SELECT * FROM usuarios WHERE login = '$login' AND senha = '$senha'") or die("erro ao selecionar");
-                if (mysql_num_rows($verifica)<=0){
-                    echo"<script language='javascript' type='text/javascript'>alert('Login e/ou senha incorretos');window.location.href='login.html';</script>";
-                    die();
-                }else{
-                    setcookie("login",$login);
-                    header("Location:index.php");
-                }
-        }
-?>
+
+
+
+        <link rel="stylesheet" href="css/style.css">
+
+
+
+
+  </head>
+
+  <body>
+
+    <div class="login">
+  <div class="heading">
+    <h2>RS Produtora</h2>
+    <form action="conexaologin.php" method="post">
+
+      <div class="input-group input-group-lg">
+        <span class="input-group-addon"><i class="fa fa-user"></i></span>
+        <input type="text" class="form-control" placeholder="Usuário" name="usuario" id="usuario">
+          </div>
+
+        <div class="input-group input-group-lg">
+          <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+          <input type="password" class="form-control" placeholder="Senha" name="senha" id="senha" >
+        </div>
+
+        <button type="submit" class="float" name="login" id="login">Login</button>
+        <button type="submit" class="float">Cadastro</button>
+       </form>
+ 		</div>
+ </div>
+
+
+
+
+
+  </body>
+</html>

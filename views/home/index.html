@@ -1,0 +1,34 @@
+<title>Well Come</title>
+
+<div class="nav navbar-default navbar-fixed-top nav-color nav-implement">
+    <h1>Simple php form</h1>
+</div>
+<br><br><br>
+<br><br><br>
+<br><br><br>
+<div class="container">
+    <div class="row">
+        <div class="well text-center">
+            <?php
+            session_start();
+            if ($_SESSION["mk"] != '') {
+            ?>
+                <h1>Well come <?php echo ('<span class="text-info">'.$_SESSION["mk"].'</span>'); ?>!</h1>
+                <br>
+                <p>
+                    <a href="/simplessys/views/home/session_out.php" class="btn-link">Logout</a>
+                </p>
+            <?php
+                } else {
+            ?>
+                <h1>Well come!</h1>
+                <br>
+                <p>
+                    <a href="/simplessys/?page=login" class="btn-link">Click here for login</a>
+                </p>
+            <?php
+                }
+            ?>
+        </div>
+    </div>
+</div>
