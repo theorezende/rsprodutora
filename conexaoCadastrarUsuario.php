@@ -1,0 +1,34 @@
+<?php
+
+// establishing the MySQLi connection
+
+
+
+$con = mysqli_connect("localhost","root","","rsprodutora");
+
+
+// checking the user
+
+if(isset($_POST['submit'])){
+  $nome = $_POST["nome"];
+  $username = $_POST["username"];
+  $password = $_POST["password"];
+  $perfil = $_POST["perfil"];
+
+
+  $nome = mysqli_real_escape_string($con, $nome);
+  $username = mysqli_real_escape_string($con, $username);
+  $password = mysqli_real_escape_string($con, $password);
+  $password = md5($password);
+
+
+    $query = mysqli_query($con, "INSERT INTO usuario (nome, usuario_status_flag, data_criacao,data_inicio,usuario,senha,perfil) VALUES ('$nome', 'S', NOW(), NOW(),'$username','$password','$perfil')");
+    if($query)
+    {
+    	echo "Cadastrado!";
+    }
+
+
+}
+
+?>

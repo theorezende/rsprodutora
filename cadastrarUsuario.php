@@ -105,33 +105,33 @@
 				<div class="panel panel-default">
 					<div class="panel-heading">Cadastro de usuário</div>
 					<div class="panel-body">
-						<form role="form">
+						<form role="form" method="post" action="conexaoCadastrarUsuario.php">
 
 							<div class="form-group">
 								<label>Nome</label>
-								<input class="form-control" required>
+								<input class="form-control" required name="nome">
 							</div>
 
 							<div class="form-group">
 								<label>Username</label>
-								<input class="form-control" required>
+								<input class="form-control" required name="username">
 							</div>
 
 							<div class="form-group">
 								<label>Password</label>
-								<input type="password" class="form-control">
+								<input type="password" class="form-control" required name="password">
 							</div>
 
 							<div class="form-group">
 								<label>Perfil</label>
-								<select class="form-control">
-									<option>Admin</option>
-									<option>Cordenador</option>
-									<option>Consulta</option>
+								<select class="form-control" name="perfil">
+									<option value="admin">Admin</option>
+									<option value="coordenador">Coordenador</option>
+									<option value="consulta">Consulta</option>
 								</select>
 							</div>
 
-							<button type="submit" class="btn btn-primary">Cadastrar</button>
+							<button type="submit" class="btn btn-primary" name="submit">Cadastrar</button>
 						</form>
 					</div>
 				</div>
