@@ -32,7 +32,6 @@
         </div>
 
         <button type="submit" class="float" name="login" id="login">Login</button>
-        <button type="submit" class="float">Cadastro</button>
        </form>
  		</div>
  </div>
