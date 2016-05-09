@@ -29,7 +29,7 @@ header("Location: index.php");
 }
 
 else {
-
+echo "erro no login";
 
 }
 
