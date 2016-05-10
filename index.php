@@ -32,7 +32,8 @@
 				<a class="navbar-brand" href="#"><span>RS</span>Produtora</a>
 				<ul class="user-menu">
 					<li class="dropdown pull-right">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown"><svg class="glyph stroked male-user"><use xlink:href="#stroked-male-user"></use></svg> Usuario <span class="caret"></span></a>
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown"><svg class="glyph stroked male-user"><use xlink:href="#stroked-male-user"></use></svg> <?php
+echo $_SESSION['usuario']; ?> <span class="caret"></span></a>
 						<ul class="dropdown-menu" role="menu">
 							<li><a href="logout.php"><svg class="glyph stroked cancel"><use xlink:href="#stroked-cancel"></use></svg> Logout</a></li>
 						</ul>
@@ -48,38 +49,38 @@
 			<li class="active"><a href="index.php"><svg class="glyph stroked dashboard-dial"><use xlink:href="#stroked-dashboard-dial"></use></svg> Dashboard</a></li>
 			<li class="parent "><a href="#"><span data-toggle="collapse" href="#sub-item-1"><svg class="glyph stroked male user"><use xlink:href="#stroked-male-user"></use></svg></span> Artista</a>
 				<ul class="children collapse" id="sub-item-1">
-					<li><a class="" href="#"><svg class="glyph stroked chevron-right"><use xlink:href="#stroked-chevron-right"></use></svg> Cadastrar Artistas</a></li>
-					<li><a class="" href="#"><svg class="glyph stroked chevron-right"><use xlink:href="#stroked-chevron-right"></use></svg> Listar Artistas</a></li>
+					<li><a class="" href="cadastrarArtista.php"><svg class="glyph stroked chevron-right"><use xlink:href="#stroked-chevron-right"></use></svg> Cadastrar Artistas</a></li>
+					<li><a class="" href="listarArtista.php"><svg class="glyph stroked chevron-right"><use xlink:href="#stroked-chevron-right"></use></svg> Listar Artistas</a></li>
 				</ul>
 			</li>
 			<li class="parent "><a href="#"><span data-toggle="collapse" href="#sub-item-2"><svg class="glyph stroked blank document"><use xlink:href="#stroked-blank-document"></use></svg></span> Contrato</a>
 				<ul class="children collapse" id="sub-item-2">
-					<li><a class="" href="#"><svg class="glyph stroked chevron-right"><use xlink:href="#stroked-chevron-right"></use></svg> Cadastrar Contratos</a></li>
-					<li><a class="" href="#"><svg class="glyph stroked chevron-right"><use xlink:href="#stroked-chevron-right"></use></svg> Listar Contratos</a></li>
+					<li><a class="" href="cadastrarContrato.php"><svg class="glyph stroked chevron-right"><use xlink:href="#stroked-chevron-right"></use></svg> Cadastrar Contratos</a></li>
+					<li><a class="" href="listarContrato.php"><svg class="glyph stroked chevron-right"><use xlink:href="#stroked-chevron-right"></use></svg> Listar Contratos</a></li>
 				</ul>
 			</li>
 			<li class="parent "><a href="#"><span data-toggle="collapse" href="#sub-item-3"><svg class="glyph stroked video"><use xlink:href="#stroked-video"></use></svg></span> Ação</a>
 				<ul class="children collapse" id="sub-item-3">
-					<li><a class="" href="#"><svg class="glyph stroked chevron-right"><use xlink:href="#stroked-chevron-right"></use></svg> Cadastrar Ações</a></li>
-					<li><a class="" href="#"><svg class="glyph stroked chevron-right"><use xlink:href="#stroked-chevron-right"></use></svg> Listar Ações</a></li>
+					<li><a class="" href="cadastrarAcao.php"><svg class="glyph stroked chevron-right"><use xlink:href="#stroked-chevron-right"></use></svg> Cadastrar Ações</a></li>
+					<li><a class="" href="listarAcao.php"><svg class="glyph stroked chevron-right"><use xlink:href="#stroked-chevron-right"></use></svg> Listar Ações</a></li>
 				</ul>
 			</li>
 			<li class="parent "><a href="#"><span data-toggle="collapse" href="#sub-item-4"><svg class="glyph stroked calendar"><use xlink:href="#stroked-calendar"></use></svg></span> Evento</a>
 				<ul class="children collapse" id="sub-item-4">
-					<li><a class="" href="#"><svg class="glyph stroked chevron-right"><use xlink:href="#stroked-chevron-right"></use></svg> Cadastrar Eventos</a></li>
-					<li><a class="" href="#"><svg class="glyph stroked chevron-right"><use xlink:href="#stroked-chevron-right"></use></svg> Listar Eventos</a></li>
+					<li><a class="" href="cadastrarEvento.php"><svg class="glyph stroked chevron-right"><use xlink:href="#stroked-chevron-right"></use></svg> Cadastrar Eventos</a></li>
+					<li><a class="" href="listarEvento.php"><svg class="glyph stroked chevron-right"><use xlink:href="#stroked-chevron-right"></use></svg> Listar Eventos</a></li>
 				</ul>
 			</li>
 			<li class="parent "><a href="#"><span data-toggle="collapse" href="#sub-item-5"><svg class="glyph stroked table"><use xlink:href="#stroked-table"></use></svg></span> Empresa</a>
 				<ul class="children collapse" id="sub-item-5">
-					<li><a class="" href="#"><svg class="glyph stroked chevron-right"><use xlink:href="#stroked-chevron-right"></use></svg> Cadastrar Empresas</a></li>
-					<li><a class="" href="#"><svg class="glyph stroked chevron-right"><use xlink:href="#stroked-chevron-right"></use></svg> Listar Empresas</a></li>
+					<li><a class="" href="cadastrarEmpresa.php"><svg class="glyph stroked chevron-right"><use xlink:href="#stroked-chevron-right"></use></svg> Cadastrar Empresas</a></li>
+					<li><a class="" href="listarEmpresa.php"><svg class="glyph stroked chevron-right"><use xlink:href="#stroked-chevron-right"></use></svg> Listar Empresas</a></li>
 				</ul>
 			</li>
 			<li class="parent "><a href="#"><span data-toggle="collapse" href="#sub-item-6"><svg class="glyph stroked lock"><use xlink:href="#stroked-lock"></use></svg></span> Usuário</a>
 				<ul class="children collapse" id="sub-item-6">
-					<li><a class="" href="#"><svg class="glyph stroked chevron-right"><use xlink:href="#stroked-chevron-right"></use></svg> Cadastrar Usuários</a></li>
-					<li><a class="" href="#"><svg class="glyph stroked chevron-right"><use xlink:href="#stroked-chevron-right"></use></svg> Listar Usuários</a></li>
+					<li><a class="" href="cadastrarUsuario.php"><svg class="glyph stroked chevron-right"><use xlink:href="#stroked-chevron-right"></use></svg> Cadastrar Usuários</a></li>
+					<li><a class="" href="listarUsuario.php"><svg class="glyph stroked chevron-right"><use xlink:href="#stroked-chevron-right"></use></svg> Listar Usuários</a></li>
 				</ul>
 			</li>
 				</ul>

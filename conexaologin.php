@@ -4,7 +4,7 @@
 
 
 
-$con = mysqli_connect("mysql.hostinger.com.br","root","123456","u766907098_rspro");
+$con = mysqli_connect("mysql.hostinger.com.br","u766907098_root","123456","u766907098_rspro");
 
 
 // checking the user

@@ -45,14 +45,14 @@
 
 	<div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar">
 		<ul class="nav menu">
-			<li class="active"><a href="index.php"><svg class="glyph stroked dashboard-dial"><use xlink:href="#stroked-dashboard-dial"></use></svg> Dashboard</a></li>
+			<li class=""><a href="index.php"><svg class="glyph stroked dashboard-dial"><use xlink:href="#stroked-dashboard-dial"></use></svg> Dashboard</a></li>
 			<li class="parent "><a href="#"><span data-toggle="collapse" href="#sub-item-1"><svg class="glyph stroked male user"><use xlink:href="#stroked-male-user"></use></svg></span> Artista</a>
 				<ul class="children collapse" id="sub-item-1">
 					<li><a class="" href="cadastrarArtista.php"><svg class="glyph stroked chevron-right"><use xlink:href="#stroked-chevron-right"></use></svg> Cadastrar Artistas</a></li>
 					<li><a class="" href="listarArtista.php"><svg class="glyph stroked chevron-right"><use xlink:href="#stroked-chevron-right"></use></svg> Listar Artistas</a></li>
 				</ul>
 			</li>
-			<li class="parent "><a href="#"><span data-toggle="collapse" href="#sub-item-2"><svg class="glyph stroked blank document"><use xlink:href="#stroked-blank-document"></use></svg></span> Contrato</a>
+			<li class="parent active"><a href="#"><span data-toggle="collapse" href="#sub-item-2"><svg class="glyph stroked blank document"><use xlink:href="#stroked-blank-document"></use></svg></span> Contrato</a>
 				<ul class="children collapse" id="sub-item-2">
 					<li><a class="" href="cadastrarContrato.php"><svg class="glyph stroked chevron-right"><use xlink:href="#stroked-chevron-right"></use></svg> Cadastrar Contratos</a></li>
 					<li><a class="" href="listarContrato.php"><svg class="glyph stroked chevron-right"><use xlink:href="#stroked-chevron-right"></use></svg> Listar Contratos</a></li>
@@ -90,13 +90,13 @@
 		<div class="row">
 			<ol class="breadcrumb">
 				<li><a href="#"><svg class="glyph stroked home"><use xlink:href="#stroked-home"></use></svg></a></li>
-				<li class="active">Cadastro de usuários</li>
+				<li class="active">Cadastro de contratos</li>
 			</ol>
 		</div><!--/.row-->
 
 		<div class="row">
 			<div class="col-lg-12">
-				<h1 class="page-header">Cadastro de usuários</h1>
+				<h1 class="page-header">Cadastro de contratos</h1>
 			</div>
 		</div><!--/.row-->
 
