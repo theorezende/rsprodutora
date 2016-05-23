@@ -49,9 +49,9 @@
 			<li class=""><a href="listarArtista.php"><svg class="glyph stroked male user"><use xlink:href="#stroked-male-user"></use></svg>Artista</a></li>
 			<li class=""><a href="listarContrato.php"><svg class="glyph stroked blank document"><use xlink:href="#stroked-blank-document"></use></svg>Contrato</a></li>
 			<li class=""><a href="listarAcao.php"><svg class="glyph stroked video"><use xlink:href="#stroked-video"></use></svg>Ação</a></li>
-			<li class=""><a href="listarEvento.php"><svg class="glyph stroked calendar"><use xlink:href="#stroked-calendar"></use></svg> Evento</a></li>
+			<li class="active"><a href="listarEvento.php"><svg class="glyph stroked calendar"><use xlink:href="#stroked-calendar"></use></svg> Evento</a></li>
 			<li class=""><a href="listarEmpresa.php"><svg class="glyph stroked table"><use xlink:href="#stroked-table"></use></svg> Empresa</a></li>
-			<li class="active"><a href="listarUsuario.php"><svg class="glyph stroked lock"><use xlink:href="#stroked-lock"></use></svg> Usuário</a>
+			<li class=""><a href="listarUsuario.php"><svg class="glyph stroked lock"><use xlink:href="#stroked-lock"></use></svg> Usuário</a>
 		</ul>
 
 	</div><!--/.sidebar-->
@@ -60,48 +60,72 @@
 		<div class="row">
 			<ol class="breadcrumb">
 				<li><a href="#"><svg class="glyph stroked home"><use xlink:href="#stroked-home"></use></svg></a></li>
-				<li class="active">Cadastro de usuários</li>
+				<li class="active">Editar Evento</li>
 			</ol>
 		</div><!--/.row-->
 
 		<div class="row">
 			<div class="col-lg-12">
-				<h1 class="page-header">Cadastro de usuários</h1>
+				<h1 class="page-header">Editar Evento</h1>
 			</div>
 		</div><!--/.row-->
 
 		<div class="row">
 			<div class="col-lg-12">
 				<div class="panel panel-default">
-					<div class="panel-heading">Cadastro de usuário</div>
+					<div class="panel-heading">Editar Evento</div>
 					<div class="panel-body">
-						<form role="form" method="post" action="conexaoCadastrarUsuario.php">
+						<?php
+						  /* Captura as informações do usuário para exibir no template de alteração */
+							$con = mysqli_connect("mysql.hostinger.com.br","u766907098_root","123456","u766907098_rspro");
+						  $result = mysqli_query($con,'SELECT * FROM evento WHERE id_evento = "' . (int)$_GET['id'] . '"');
+							$row = mysqli_fetch_array($result);
+							$id = $_GET['id'];
+							$nome = $row['nome'];
+							$tipo = $row['tipo'];
+							$data_evento = $row['data_inicio'];
+							$descricao = $row['descricao'];
+							$tempo = $row['qt_horas'];
+							$valor = $row['valor'];
+							?>
+						<form role="form" method="post" action="conexaoEditarEvento.php?id=<?echo $id?>">
 
-							<div class="form-group">
-								<label>Nome</label>
-								<input class="form-control" required name="nome">
-							</div>
+														<div class="form-group">
+															<label>Nome</label>
+															<input class="form-control" required name="nome" value="<?echo $nome?>">
+														</div>
 
-							<div class="form-group">
-								<label>Username</label>
-								<input class="form-control" required name="username">
-							</div>
+														<div class="form-group">
+															<label>Tipo</label>
+															<select class="form-control" name="tipo">
+																<option value="show">Show</option>
+																<option value="programa-tv">Programa de TV</option>
+																<option value="programa-radio">Programa de Rádio</option>
+																<option value="beneficente">Beneficente</option>
+																<option value="publicitario">Publicitário</option>
+															</select>
+														</div>
 
-							<div class="form-group">
-								<label>Password</label>
-								<input type="password" class="form-control" required name="password">
-							</div>
+														<div class="form-group">
+															<label>Data do Evento (YYYY-MM-DD)</label>
+															<input class="form-control" required name="data_evento" value="<?echo $data_evento?>">
+														</div>
 
-							<div class="form-group">
-								<label>Perfil</label>
-								<select class="form-control" name="perfil">
-									<option value="admin">Admin</option>
-									<option value="coordenador">Coordenador</option>
-									<option value="consulta">Consulta</option>
-								</select>
-							</div>
+														<div class="form-group">
+															<label>Descrição</label>
+															<input class="form-control" required name="descricao" value="<?echo $descricao?>">
+														</div>
 
-							<button type="submit" class="btn btn-primary" name="submit">Cadastrar</button>
+														<div class="form-group">
+															<label>Tempo (em horas)</label>
+															<input class="form-control" required name="tempo" value="<?echo $tempo?>">
+														</div>
+
+														<div class="form-group">
+															<label>Valor monetário </label>
+															<input class="form-control" required name="valor" value="<?echo $valor?>">
+														</div>
+							 <button type="submit" class="btn btn-primary" name="submit">Editar</button>
 						</form>
 					</div>
 				</div>

@@ -46,43 +46,13 @@
 
 	<div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar">
 		<ul class="nav menu">
-			<li class="active"><a href="index.php"><svg class="glyph stroked dashboard-dial"><use xlink:href="#stroked-dashboard-dial"></use></svg> Dashboard</a></li>
-			<li class="parent "><a href="#"><span data-toggle="collapse" href="#sub-item-1"><svg class="glyph stroked male user"><use xlink:href="#stroked-male-user"></use></svg></span> Artista</a>
-				<ul class="children collapse" id="sub-item-1">
-					<li><a class="" href="cadastrarArtista.php"><svg class="glyph stroked chevron-right"><use xlink:href="#stroked-chevron-right"></use></svg> Cadastrar Artistas</a></li>
-					<li><a class="" href="listarArtista.php"><svg class="glyph stroked chevron-right"><use xlink:href="#stroked-chevron-right"></use></svg> Listar Artistas</a></li>
-				</ul>
-			</li>
-			<li class="parent "><a href="#"><span data-toggle="collapse" href="#sub-item-2"><svg class="glyph stroked blank document"><use xlink:href="#stroked-blank-document"></use></svg></span> Contrato</a>
-				<ul class="children collapse" id="sub-item-2">
-					<li><a class="" href="cadastrarContrato.php"><svg class="glyph stroked chevron-right"><use xlink:href="#stroked-chevron-right"></use></svg> Cadastrar Contratos</a></li>
-					<li><a class="" href="listarContrato.php"><svg class="glyph stroked chevron-right"><use xlink:href="#stroked-chevron-right"></use></svg> Listar Contratos</a></li>
-				</ul>
-			</li>
-			<li class="parent "><a href="#"><span data-toggle="collapse" href="#sub-item-3"><svg class="glyph stroked video"><use xlink:href="#stroked-video"></use></svg></span> Ação</a>
-				<ul class="children collapse" id="sub-item-3">
-					<li><a class="" href="cadastrarAcao.php"><svg class="glyph stroked chevron-right"><use xlink:href="#stroked-chevron-right"></use></svg> Cadastrar Ações</a></li>
-					<li><a class="" href="listarAcao.php"><svg class="glyph stroked chevron-right"><use xlink:href="#stroked-chevron-right"></use></svg> Listar Ações</a></li>
-				</ul>
-			</li>
-			<li class="parent "><a href="#"><span data-toggle="collapse" href="#sub-item-4"><svg class="glyph stroked calendar"><use xlink:href="#stroked-calendar"></use></svg></span> Evento</a>
-				<ul class="children collapse" id="sub-item-4">
-					<li><a class="" href="cadastrarEvento.php"><svg class="glyph stroked chevron-right"><use xlink:href="#stroked-chevron-right"></use></svg> Cadastrar Eventos</a></li>
-					<li><a class="" href="listarEvento.php"><svg class="glyph stroked chevron-right"><use xlink:href="#stroked-chevron-right"></use></svg> Listar Eventos</a></li>
-				</ul>
-			</li>
-			<li class="parent "><a href="#"><span data-toggle="collapse" href="#sub-item-5"><svg class="glyph stroked table"><use xlink:href="#stroked-table"></use></svg></span> Empresa</a>
-				<ul class="children collapse" id="sub-item-5">
-					<li><a class="" href="cadastrarEmpresa.php"><svg class="glyph stroked chevron-right"><use xlink:href="#stroked-chevron-right"></use></svg> Cadastrar Empresas</a></li>
-					<li><a class="" href="listarEmpresa.php"><svg class="glyph stroked chevron-right"><use xlink:href="#stroked-chevron-right"></use></svg> Listar Empresas</a></li>
-				</ul>
-			</li>
-			<li class="parent "><a href="#"><span data-toggle="collapse" href="#sub-item-6"><svg class="glyph stroked lock"><use xlink:href="#stroked-lock"></use></svg></span> Usuário</a>
-				<ul class="children collapse" id="sub-item-6">
-					<li><a class="" href="cadastrarUsuario.php"><svg class="glyph stroked chevron-right"><use xlink:href="#stroked-chevron-right"></use></svg> Cadastrar Usuários</a></li>
-					<li><a class="" href="listarUsuario.php"><svg class="glyph stroked chevron-right"><use xlink:href="#stroked-chevron-right"></use></svg> Listar Usuários</a></li>
-				</ul>
-			</li>
+			<li class=""><a href="index.php"><svg class="glyph stroked dashboard-dial"><use xlink:href="#stroked-dashboard-dial"></use></svg> Dashboard</a></li>
+			<li class=""><a href="listarArtista.php"><svg class="glyph stroked male user"><use xlink:href="#stroked-male-user"></use></svg>Artista</a></li>
+			<li class=""><a href="listarContrato.php"><svg class="glyph stroked blank document"><use xlink:href="#stroked-blank-document"></use></svg>Contrato</a></li>
+			<li class=""><a href="listarAcao.php"><svg class="glyph stroked video"><use xlink:href="#stroked-video"></use></svg>Ação</a></li>
+			<li class=""><a href="listarEvento.php"><svg class="glyph stroked calendar"><use xlink:href="#stroked-calendar"></use></svg> Evento</a></li>
+			<li class=""><a href="listarEmpresa.php"><svg class="glyph stroked table"><use xlink:href="#stroked-table"></use></svg> Empresa</a></li>
+			<li class="active "><a href="listarUsuario.php"><svg class="glyph stroked lock"><use xlink:href="#stroked-lock"></use></svg> Usuário</a>
 				</ul>
 
 	</div><!--/.sidebar-->
@@ -104,18 +74,21 @@
 		<div class="row">
 			<div class="col-lg-12">
 				<div class="panel panel-default">
-					<div class="panel-heading">Listar Usuários</div>
+					<div class="panel-heading">Listar Usuários <a href="cadastrarUsuario.php" style="float:right">Cadastrar Usuário</a></div>
 					<div class="panel-body">
+
 						<?php
 						$con = mysqli_connect("mysql.hostinger.com.br","u766907098_root","123456","u766907098_rspro");
 						$result = mysqli_query($con,'SELECT id_usuario,nome,data_criacao,usuario,perfil FROM usuario');
 
-						echo "<table border='1'>
+						echo "<table class='db-table' cellpadding='0' cellspacing='0'>
 						<tr>
 						<th>Nome</th>
 						<th>Data de Criacao</th>
-						<th>usuario</th>
-						<th>perfil</th>
+						<th>Usuário</th>
+						<th>Perfil</th>
+						<th>Ação</th>
+						<th>Ação</th>
 						</tr>";
 
 						while($row = mysqli_fetch_array($result))
@@ -125,7 +98,8 @@
 						echo "<td>" . $row['data_criacao'] . "</td>";
 						echo "<td>" . $row['usuario'] . "</td>";
 						echo "<td>" . $row['perfil'] . "</td>";
-						echo "<td> <a href='editarUsuario.php?id={$row['id_usuario']}' > editar </a></td>";
+						echo "<td> <a href='editarUsuario.php?id={$row['id_usuario']}' > Editar </a></td>";
+						echo "<td> <a href='conexaoExcluirUsuario.php?id={$row['id_usuario']}' > Excluir </a></td>";
 						echo "</tr>";
 						}
 						echo "</table>";

@@ -45,44 +45,14 @@
 
 	<div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar">
 		<ul class="nav menu">
-			<li class="active"><a href="index.php"><svg class="glyph stroked dashboard-dial"><use xlink:href="#stroked-dashboard-dial"></use></svg> Dashboard</a></li>
-			<li class="parent "><a href="#"><span data-toggle="collapse" href="#sub-item-1"><svg class="glyph stroked male user"><use xlink:href="#stroked-male-user"></use></svg></span> Artista</a>
-				<ul class="children collapse" id="sub-item-1">
-					<li><a class="" href="cadastrarArtista.php"><svg class="glyph stroked chevron-right"><use xlink:href="#stroked-chevron-right"></use></svg> Cadastrar Artistas</a></li>
-					<li><a class="" href="listarArtista.php"><svg class="glyph stroked chevron-right"><use xlink:href="#stroked-chevron-right"></use></svg> Listar Artistas</a></li>
-				</ul>
-			</li>
-			<li class="parent "><a href="#"><span data-toggle="collapse" href="#sub-item-2"><svg class="glyph stroked blank document"><use xlink:href="#stroked-blank-document"></use></svg></span> Contrato</a>
-				<ul class="children collapse" id="sub-item-2">
-					<li><a class="" href="cadastrarContrato.php"><svg class="glyph stroked chevron-right"><use xlink:href="#stroked-chevron-right"></use></svg> Cadastrar Contratos</a></li>
-					<li><a class="" href="listarContrato.php"><svg class="glyph stroked chevron-right"><use xlink:href="#stroked-chevron-right"></use></svg> Listar Contratos</a></li>
-				</ul>
-			</li>
-			<li class="parent "><a href="#"><span data-toggle="collapse" href="#sub-item-3"><svg class="glyph stroked video"><use xlink:href="#stroked-video"></use></svg></span> Ação</a>
-				<ul class="children collapse" id="sub-item-3">
-					<li><a class="" href="cadastrarAcao.php"><svg class="glyph stroked chevron-right"><use xlink:href="#stroked-chevron-right"></use></svg> Cadastrar Ações</a></li>
-					<li><a class="" href="listarAcao.php"><svg class="glyph stroked chevron-right"><use xlink:href="#stroked-chevron-right"></use></svg> Listar Ações</a></li>
-				</ul>
-			</li>
-			<li class="parent "><a href="#"><span data-toggle="collapse" href="#sub-item-4"><svg class="glyph stroked calendar"><use xlink:href="#stroked-calendar"></use></svg></span> Evento</a>
-				<ul class="children collapse" id="sub-item-4">
-					<li><a class="" href="cadastrarEvento.php"><svg class="glyph stroked chevron-right"><use xlink:href="#stroked-chevron-right"></use></svg> Cadastrar Eventos</a></li>
-					<li><a class="" href="listarEvento.php"><svg class="glyph stroked chevron-right"><use xlink:href="#stroked-chevron-right"></use></svg> Listar Eventos</a></li>
-				</ul>
-			</li>
-			<li class="parent "><a href="#"><span data-toggle="collapse" href="#sub-item-5"><svg class="glyph stroked table"><use xlink:href="#stroked-table"></use></svg></span> Empresa</a>
-				<ul class="children collapse" id="sub-item-5">
-					<li><a class="" href="cadastrarEmpresa.php"><svg class="glyph stroked chevron-right"><use xlink:href="#stroked-chevron-right"></use></svg> Cadastrar Empresas</a></li>
-					<li><a class="" href="listarEmpresa.php"><svg class="glyph stroked chevron-right"><use xlink:href="#stroked-chevron-right"></use></svg> Listar Empresas</a></li>
-				</ul>
-			</li>
-			<li class="parent "><a href="#"><span data-toggle="collapse" href="#sub-item-6"><svg class="glyph stroked lock"><use xlink:href="#stroked-lock"></use></svg></span> Usuário</a>
-				<ul class="children collapse" id="sub-item-6">
-					<li><a class="" href="cadastrarUsuario.php"><svg class="glyph stroked chevron-right"><use xlink:href="#stroked-chevron-right"></use></svg> Cadastrar Usuários</a></li>
-					<li><a class="" href="listarUsuario.php"><svg class="glyph stroked chevron-right"><use xlink:href="#stroked-chevron-right"></use></svg> Listar Usuários</a></li>
-				</ul>
-			</li>
-				</ul>
+			<li class=""><a href="index.php"><svg class="glyph stroked dashboard-dial"><use xlink:href="#stroked-dashboard-dial"></use></svg> Dashboard</a></li>
+			<li class=""><a href="listarArtista.php"><svg class="glyph stroked male user"><use xlink:href="#stroked-male-user"></use></svg>Artista</a></li>
+			<li class=""><a href="listarContrato.php"><svg class="glyph stroked blank document"><use xlink:href="#stroked-blank-document"></use></svg>Contrato</a></li>
+			<li class=""><a href="listarAcao.php"><svg class="glyph stroked video"><use xlink:href="#stroked-video"></use></svg>Ação</a></li>
+			<li class=""><a href="listarEvento.php"><svg class="glyph stroked calendar"><use xlink:href="#stroked-calendar"></use></svg> Evento</a></li>
+			<li class=""><a href="listarEmpresa.php"><svg class="glyph stroked table"><use xlink:href="#stroked-table"></use></svg> Empresa</a></li>
+			<li class="active"><a href="listarUsuario.php"><svg class="glyph stroked lock"><use xlink:href="#stroked-lock"></use></svg> Usuário</a>
+		</ul>
 
 	</div><!--/.sidebar-->
 
@@ -90,44 +60,46 @@
 		<div class="row">
 			<ol class="breadcrumb">
 				<li><a href="#"><svg class="glyph stroked home"><use xlink:href="#stroked-home"></use></svg></a></li>
-				<li class="active">Cadastro de usuários</li>
+				<li class="active">Editar Usuários</li>
 			</ol>
 		</div><!--/.row-->
 
 		<div class="row">
 			<div class="col-lg-12">
-				<h1 class="page-header">Cadastro de usuários</h1>
+				<h1 class="page-header">Editar Usuários</h1>
 			</div>
 		</div><!--/.row-->
 
 		<div class="row">
 			<div class="col-lg-12">
 				<div class="panel panel-default">
-					<div class="panel-heading">Cadastro de usuário</div>
+					<div class="panel-heading">Editar Usuários</div>
 					<div class="panel-body">
 						<?php
 						  /* Captura as informações do usuário para exibir no template de alteração */
 							$con = mysqli_connect("mysql.hostinger.com.br","u766907098_root","123456","u766907098_rspro");
 						  $result = mysqli_query($con,'SELECT * FROM usuario WHERE id_usuario = "' . (int)$_GET['id'] . '"');
-
-						  /* Verifica se há uma requisição do tipo POST */
-							echo $_GET['id'];
+							$row = mysqli_fetch_array($result);
+							$id = $_GET['id'];
+							$nome = $row['nome'];
+							$username = $row['usuario'];
+							$password = $row['senha'];
+							$perfil = $row['perfil'];
 							?>
-						<form role="form" method="post" action="conexaoCadastrarUsuario.php">
-
+						<form role="form" method="post" action="conexaoEditarUsuario.php?id=<?echo $id?>">
 							<div class="form-group">
 								<label>Nome</label>
-								<input class="form-control" required name="nome">
+								<input class="form-control" required name="nome" value="<?echo $nome?>">
 							</div>
 
 							<div class="form-group">
 								<label>Username</label>
-								<input class="form-control" required name="username">
+								<input class="form-control" required name="username" value="<?echo $username ?>">
 							</div>
 
 							<div class="form-group">
 								<label>Password</label>
-								<input type="password" class="form-control" required name="password">
+								<input type="password" class="form-control" required name="password" value="<?echo $password ?>">
 							</div>
 
 							<div class="form-group">
@@ -138,7 +110,7 @@
 									<option value="consulta">Consulta</option>
 								</select>
 							</div>
-							 <button type="submit" class="btn btn-primary" name="submit">Cadastrar</button>
+							 <button type="submit" class="btn btn-primary" name="submit">Editar</button>
 						</form>
 					</div>
 				</div>

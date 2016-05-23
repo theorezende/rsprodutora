@@ -7,6 +7,7 @@
 
 <link href="css/bootstrap.min.css" rel="stylesheet">
 <link href="css/datepicker3.css" rel="stylesheet">
+<link href="css/bootstrap-table.css" rel="stylesheet">
 <link href="css/styles.css" rel="stylesheet">
 
 <!--Icons-->
@@ -50,8 +51,8 @@
 			<li class=""><a href="listarContrato.php"><svg class="glyph stroked blank document"><use xlink:href="#stroked-blank-document"></use></svg>Contrato</a></li>
 			<li class=""><a href="listarAcao.php"><svg class="glyph stroked video"><use xlink:href="#stroked-video"></use></svg>Ação</a></li>
 			<li class=""><a href="listarEvento.php"><svg class="glyph stroked calendar"><use xlink:href="#stroked-calendar"></use></svg> Evento</a></li>
-			<li class=""><a href="listarEmpresa.php"><svg class="glyph stroked table"><use xlink:href="#stroked-table"></use></svg> Empresa</a></li>
-			<li class="active"><a href="listarUsuario.php"><svg class="glyph stroked lock"><use xlink:href="#stroked-lock"></use></svg> Usuário</a>
+			<li class="active"><a href="listarEmpresa.php"><svg class="glyph stroked table"><use xlink:href="#stroked-table"></use></svg> Empresa</a></li>
+			<li class=""><a href="listarUsuario.php"><svg class="glyph stroked lock"><use xlink:href="#stroked-lock"></use></svg> Usuário</a>
 		</ul>
 
 	</div><!--/.sidebar-->
@@ -60,49 +61,57 @@
 		<div class="row">
 			<ol class="breadcrumb">
 				<li><a href="#"><svg class="glyph stroked home"><use xlink:href="#stroked-home"></use></svg></a></li>
-				<li class="active">Cadastro de usuários</li>
+				<li class="active">Empresas</li>
 			</ol>
 		</div><!--/.row-->
 
 		<div class="row">
 			<div class="col-lg-12">
-				<h1 class="page-header">Cadastro de usuários</h1>
+				<h1 class="page-header">Empresas</h1>
 			</div>
 		</div><!--/.row-->
 
 		<div class="row">
 			<div class="col-lg-12">
 				<div class="panel panel-default">
-					<div class="panel-heading">Cadastro de usuário</div>
+					<div class="panel-heading">Listar Empresas <a href="cadastrarEmpresa.php" style="float:right">Cadastrar Empresas</a></div>
 					<div class="panel-body">
-						<form role="form" method="post" action="conexaoCadastrarUsuario.php">
 
-							<div class="form-group">
-								<label>Nome</label>
-								<input class="form-control" required name="nome">
-							</div>
+						<?php
+						$con = mysqli_connect("mysql.hostinger.com.br","u766907098_root","123456","u766907098_rspro");
+						$result = mysqli_query($con,'SELECT id_empresa,nome,cnpj,cidade,telefone,dt_criacao,id_evento FROM empresa');
 
-							<div class="form-group">
-								<label>Username</label>
-								<input class="form-control" required name="username">
-							</div>
+						echo "<table class='db-table' cellpadding='0' cellspacing='0'>
+						<tr>
+						<th>ID Empresa</th>
+						<th>Nome</th>
+						<th>CNPJ</th>
+						<th>Cidade</th>
+						<th>Telefone</th>
+						<th>Data de Criacao</th>
+						<th>ID Evento</th>
+						<th>Ação</th>
+						<th>Ação</th>
+						</tr>";
 
-							<div class="form-group">
-								<label>Password</label>
-								<input type="password" class="form-control" required name="password">
-							</div>
+						while($row = mysqli_fetch_array($result))
+						{
+						echo "<tr>";
+						echo "<td>" . $row['id_empresa'] . "</td>";
+						echo "<td>" . $row['nome'] . "</td>";
+						echo "<td>" . $row['cnpj'] . "</td>";
+						echo "<td>" . $row['cidade'] . "</td>";
+						echo "<td>" . $row['telefone'] . "</td>";
+						echo "<td>" . $row['dt_criacao'] . "</td>";
+						echo "<td>" . $row['id_evento'] . "</td>";
+						echo "<td> <a href='editarEmpresa.php?id={$row['id_empresa']}' > Editar </a></td>";
+						echo "<td> <a href='conexaoExcluirEmpresa.php?id={$row['id_empresa']}' > Excluir </a></td>";
+						echo "</tr>";
+						}
+						echo "</table>";
 
-							<div class="form-group">
-								<label>Perfil</label>
-								<select class="form-control" name="perfil">
-									<option value="admin">Admin</option>
-									<option value="coordenador">Coordenador</option>
-									<option value="consulta">Consulta</option>
-								</select>
-							</div>
-
-							<button type="submit" class="btn btn-primary" name="submit">Cadastrar</button>
-						</form>
+						mysqli_close($con);
+						?>
 					</div>
 				</div>
 			</div>

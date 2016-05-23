@@ -77,7 +77,7 @@ echo $_SESSION['usuario']; ?> <span class="caret"></span></a>
 					<li><a class="" href="listarEmpresa.php"><svg class="glyph stroked chevron-right"><use xlink:href="#stroked-chevron-right"></use></svg> Listar Empresas</a></li>
 				</ul>
 			</li>
-			<li class="parent "><a href="#"><span data-toggle="collapse" href="#sub-item-6"><svg class="glyph stroked lock"><use xlink:href="#stroked-lock"></use></svg></span> Usuário</a>
+			<li class="parent "><a href="listarUsuario.php"><span data-toggle="collapse" href="#sub-item-6"><svg class="glyph stroked lock"><use xlink:href="#stroked-lock"></use></svg></span> Usuário</a>
 				<ul class="children collapse" id="sub-item-6">
 					<li><a class="" href="cadastrarUsuario.php"><svg class="glyph stroked chevron-right"><use xlink:href="#stroked-chevron-right"></use></svg> Cadastrar Usuários</a></li>
 					<li><a class="" href="listarUsuario.php"><svg class="glyph stroked chevron-right"><use xlink:href="#stroked-chevron-right"></use></svg> Listar Usuários</a></li>

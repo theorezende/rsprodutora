@@ -7,6 +7,7 @@
 
 <link href="css/bootstrap.min.css" rel="stylesheet">
 <link href="css/datepicker3.css" rel="stylesheet">
+<link href="css/bootstrap-table.css" rel="stylesheet">
 <link href="css/styles.css" rel="stylesheet">
 
 <!--Icons-->
@@ -46,12 +47,12 @@
 	<div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar">
 		<ul class="nav menu">
 			<li class=""><a href="index.php"><svg class="glyph stroked dashboard-dial"><use xlink:href="#stroked-dashboard-dial"></use></svg> Dashboard</a></li>
-			<li class=""><a href="listarArtista.php"><svg class="glyph stroked male user"><use xlink:href="#stroked-male-user"></use></svg>Artista</a></li>
+			<li class="active"><a href="listarArtista.php"><svg class="glyph stroked male user"><use xlink:href="#stroked-male-user"></use></svg>Artista</a></li>
 			<li class=""><a href="listarContrato.php"><svg class="glyph stroked blank document"><use xlink:href="#stroked-blank-document"></use></svg>Contrato</a></li>
 			<li class=""><a href="listarAcao.php"><svg class="glyph stroked video"><use xlink:href="#stroked-video"></use></svg>Ação</a></li>
 			<li class=""><a href="listarEvento.php"><svg class="glyph stroked calendar"><use xlink:href="#stroked-calendar"></use></svg> Evento</a></li>
 			<li class=""><a href="listarEmpresa.php"><svg class="glyph stroked table"><use xlink:href="#stroked-table"></use></svg> Empresa</a></li>
-			<li class="active"><a href="listarUsuario.php"><svg class="glyph stroked lock"><use xlink:href="#stroked-lock"></use></svg> Usuário</a>
+			<li class=""><a href="listarUsuario.php"><svg class="glyph stroked lock"><use xlink:href="#stroked-lock"></use></svg> Usuário</a>
 		</ul>
 
 	</div><!--/.sidebar-->
@@ -60,49 +61,57 @@
 		<div class="row">
 			<ol class="breadcrumb">
 				<li><a href="#"><svg class="glyph stroked home"><use xlink:href="#stroked-home"></use></svg></a></li>
-				<li class="active">Cadastro de usuários</li>
+				<li class="active">Artista</li>
 			</ol>
 		</div><!--/.row-->
 
 		<div class="row">
 			<div class="col-lg-12">
-				<h1 class="page-header">Cadastro de usuários</h1>
+				<h1 class="page-header">Artista</h1>
 			</div>
 		</div><!--/.row-->
 
 		<div class="row">
 			<div class="col-lg-12">
 				<div class="panel panel-default">
-					<div class="panel-heading">Cadastro de usuário</div>
+					<div class="panel-heading">Listar Artistas <a href="cadastrarArtista.php" style="float:right">Cadastrar Artista</a></div>
 					<div class="panel-body">
-						<form role="form" method="post" action="conexaoCadastrarUsuario.php">
 
-							<div class="form-group">
-								<label>Nome</label>
-								<input class="form-control" required name="nome">
-							</div>
+						<?php
+						$con = mysqli_connect("mysql.hostinger.com.br","u766907098_root","123456","u766907098_rspro");
+						$result = mysqli_query($con,'SELECT cpf,nome,nome_artistico,cidade,telefone,dt_nascimento,tipo FROM artista');
 
-							<div class="form-group">
-								<label>Username</label>
-								<input class="form-control" required name="username">
-							</div>
+						echo "<table class='db-table' cellpadding='0' cellspacing='0'>
+						<tr>
+						<th>Nome</th>
+						<th>CPF</th>
+						<th>Nome Artístico</th>
+						<th>Cidade</th>
+						<th>Telefone</th>
+						<th>Data de Nascimento</th>
+						<th>Tipo</th>
+						<th>Ação</th>
+						<th>Ação</th>
+						</tr>";
 
-							<div class="form-group">
-								<label>Password</label>
-								<input type="password" class="form-control" required name="password">
-							</div>
+						while($row = mysqli_fetch_array($result))
+						{
+						echo "<tr>";
+						echo "<td>" . $row['nome'] . "</td>";
+						echo "<td>" . $row['cpf'] . "</td>";
+						echo "<td>" . $row['nome_artistico'] . "</td>";
+						echo "<td>" . $row['cidade'] . "</td>";
+						echo "<td>" . $row['telefone'] . "</td>";
+						echo "<td>" . $row['dt_nascimento'] . "</td>";
+						echo "<td>" . $row['tipo'] . "</td>";
+						echo "<td> <a href='editarArtista.php?id={$row['id_artista']}' > Editar </a></td>";
+						echo "<td> <a href='conexaoExcluirArtista.php?id={$row['id_artista']}' > Excluir </a></td>";
+						echo "</tr>";
+						}
+						echo "</table>";
 
-							<div class="form-group">
-								<label>Perfil</label>
-								<select class="form-control" name="perfil">
-									<option value="admin">Admin</option>
-									<option value="coordenador">Coordenador</option>
-									<option value="consulta">Consulta</option>
-								</select>
-							</div>
-
-							<button type="submit" class="btn btn-primary" name="submit">Cadastrar</button>
-						</form>
+						mysqli_close($con);
+						?>
 					</div>
 				</div>
 			</div>
